@@ -1,0 +1,25 @@
+package server;
+
+import javax.swing.*;
+
+public class test {
+    public static void main(String[] args) {
+        // 프레임 생성
+        JFrame frame = new JFrame("My Hart Beat Monitoring");
+
+        // 라벨 생성
+        JLabel label = new JLabel("Hello, Swing!");
+
+        // 라벨을 프레임에 추가
+        frame.getContentPane().add(label);
+
+        // 프레임 크기 설정
+        frame.setSize(300, 200);
+
+        // 프레임을 닫을 때 프로그램 종료 설정
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // 프레임 표시
+        frame.setVisible(true);
+    }
+}

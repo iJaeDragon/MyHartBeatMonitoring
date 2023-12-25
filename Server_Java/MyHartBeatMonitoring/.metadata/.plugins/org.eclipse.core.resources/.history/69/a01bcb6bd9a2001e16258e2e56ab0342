@@ -1,0 +1,28 @@
+import javax.swing.*;
+
+public class test extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // 기본 창 생성
+        primaryStage.setTitle("Main Window");
+
+        // 레이블 추가
+        Label label = new Label("Hello, JavaFX!");
+        primaryStage.setScene(new Scene(label, 300, 200));
+
+        // 창 보이기
+        primaryStage.show();
+
+        // 새로운 창 생성 및 보이기
+        Stage newStage = new Stage();
+        newStage.setTitle("New Window");
+        Label newLabel = new Label("This is a new window!");
+        newStage.setScene(new Scene(newLabel, 300, 200));
+        newStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}

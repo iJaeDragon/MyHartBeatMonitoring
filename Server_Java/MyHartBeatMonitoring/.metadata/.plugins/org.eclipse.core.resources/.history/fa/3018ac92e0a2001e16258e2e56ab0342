@@ -1,0 +1,49 @@
+package server;
+
+import javax.swing.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+public class test {
+    private static int initialX, initialY;
+
+    public static void main(String[] args) {
+        // 프레임 생성
+        JFrame frame = new JFrame("My Hart Beat Monitoring");
+        frame.setUndecorated(true);  // 상태줄 제거
+
+        // 라벨 생성
+        JLabel label = new JLabel();
+        label.setText("0");
+
+        // 라벨을 프레임에 추가
+        frame.getContentPane().add(label);
+
+        // 프레임 크기 설정
+        frame.setSize(100, 100);
+
+        // 프레임을 닫을 때 프로그램 종료 설정
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // 마우스 이벤트 처리
+        frame.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                initialX = e.getX();
+                initialY = e.getY();
+            }
+        });
+
+        frame.addMouseMotionListener(new MouseAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                int newX = frame.getLocation().x + e.getX() - initialX;
+                int newY = frame.getLocation().y + e.getY() - initialY;
+                frame.setLocation(newX, newY);
+            }
+        });
+
+        // 프레임 표시
+        frame.setVisible(true);
+    }
+}
